@@ -1,0 +1,307 @@
+# TASK_BOARD.md
+
+# MASTER TASK LIST
+
+Version 1.0
+
+---
+
+# PHASE 0
+
+PROJECT FOUNDATION
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Create NextJS project
+
+[ ] Configure TypeScript
+
+[ ] Configure Tailwind
+
+[ ] Configure ESLint
+
+[ ] Configure Prettier
+
+[ ] Configure Husky
+
+[ ] Configure Vercel
+
+[ ] First Deployment
+
+DONE WHEN:
+
+Website online.
+
+---
+
+# PHASE 1
+
+AUTH
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Login Page
+
+[ ] Session Management
+
+[ ] Protected Routes
+
+[ ] Logout
+
+DONE WHEN:
+
+Login works.
+
+---
+
+# PHASE 2
+
+DASHBOARD
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Dashboard UI
+
+[ ] Statistics Cards
+
+[ ] Learning Progress
+
+[ ] Today's Tasks
+
+DONE WHEN:
+
+Dashboard usable.
+
+---
+
+# PHASE 3
+
+AI TUTOR
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Chat UI
+
+[ ] AI Service
+
+[ ] Conversation History
+
+[ ] Prompt Templates
+
+DONE WHEN:
+
+Tutor works.
+
+---
+
+# PHASE 4
+
+PLACEMENT TEST
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Vocabulary Test
+
+[ ] Grammar Test
+
+[ ] Reading Test
+
+[ ] Scoring
+
+DONE WHEN:
+
+Assessment Report Generated.
+
+---
+
+# PHASE 5
+
+STUDY PLAN
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] 90 Day Planner
+
+[ ] Daily Tasks
+
+[ ] Progress Tracking
+
+DONE WHEN:
+
+Study Plan Generated.
+
+---
+
+# PHASE 6
+
+WRITING TRAINER
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Essay Input
+
+[ ] AI Evaluation
+
+[ ] Feedback UI
+
+[ ] Sample Essay
+
+DONE WHEN:
+
+Writing scored.
+
+---
+
+# PHASE 7
+
+SPEAKING RECORDER
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Record Audio
+
+[ ] Upload Audio
+
+[ ] Playback Audio
+
+DONE WHEN:
+
+Recording works.
+
+---
+
+# PHASE 8
+
+WHISPER
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] OpenAI Whisper
+
+[ ] Transcript
+
+[ ] Store Transcript
+
+DONE WHEN:
+
+Speech To Text works.
+
+---
+
+# PHASE 9
+
+SPEAKING EVALUATOR
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Fluency Score
+
+[ ] Grammar Score
+
+[ ] Pronunciation Score
+
+[ ] Vocabulary Score
+
+DONE WHEN:
+
+Speaking Report Generated.
+
+---
+
+# PHASE 10
+
+VOCABULARY
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Flashcards
+
+[ ] Review Scheduler
+
+[ ] Mastery Tracking
+
+DONE WHEN:
+
+Spaced Repetition works.
+
+---
+
+# PHASE 11
+
+READING
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Reading Passage
+
+[ ] Questions
+
+[ ] Scoring
+
+DONE WHEN:
+
+Reading Module works.
+
+---
+
+# PHASE 12
+
+LISTENING
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Audio Player
+
+[ ] Questions
+
+[ ] Scoring
+
+DONE WHEN:
+
+Listening Module works.
+
+---
+
+# PHASE 13
+
+MOCK TEST
+
+Status: NOT STARTED
+
+Tasks:
+
+[ ] Full Simulation
+
+[ ] Scoring
+
+[ ] Final Report
+
+DONE WHEN:
+
+Complete VSTEP Mock Test available.
