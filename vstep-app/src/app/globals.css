@@ -1,20 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f0f7ff;
+  --foreground: #0b1f3a;
+  --surface: #f8fcff;
+  --surface-strong: #ffffff;
+  --border-soft: #c5d6ea;
+  --accent: #0d7bdc;
+  --accent-strong: #0857b1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plus-jakarta);
+  --font-mono: var(--font-space-grotesk);
 }
 
 body {
   min-height: 100vh;
-  background: var(--background);
+  background:
+    radial-gradient(circle at 10% 10%, #d7ebff 0%, transparent 34%),
+    radial-gradient(circle at 90% 0%, #e4fff4 0%, transparent 38%),
+    linear-gradient(165deg, #f5faff 0%, #eef5ff 55%, #edf9ff 100%);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.surface-3d {
+  border: 1px solid color-mix(in srgb, var(--border-soft) 75%, white);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 86%, white), var(--surface-strong));
+  box-shadow:
+    0 2px 0 #ffffff,
+    0 12px 30px rgba(13, 44, 90, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.card-3d {
+  border: 1px solid color-mix(in srgb, var(--border-soft) 80%, white);
+  background: linear-gradient(175deg, #ffffff, #f3f8ff);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 22px rgba(11, 31, 58, 0.08);
+}
+
+.btn-3d {
+  border: 1px solid color-mix(in srgb, var(--accent) 75%, #00458f);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 75%, white), var(--accent-strong));
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--accent-strong) 78%, black),
+    0 10px 20px rgba(10, 76, 145, 0.24);
+}
+
+.btn-ghost-3d {
+  border: 1px solid color-mix(in srgb, var(--border-soft) 84%, white);
+  background: linear-gradient(175deg, #ffffff, #f2f7ff);
+  box-shadow:
+    0 2px 0 #ffffff,
+    0 9px 18px rgba(19, 48, 90, 0.1);
+}
+
+.lift-in {
+  animation: lift-in 500ms cubic-bezier(0.21, 1, 0.29, 1) both;
+}
+
+@keyframes lift-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

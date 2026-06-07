@@ -52,7 +52,7 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700">
+        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
           Email
         </label>
         <input
@@ -60,14 +60,14 @@ export function LoginForm() {
           type="email"
           autoComplete="email"
           {...register("email")}
-          className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none ring-sky-500 transition focus:ring-2"
+          className="w-full rounded-xl border border-slate-300/80 bg-white/95 px-3.5 py-2.5 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_10px_rgba(13,37,74,0.06)] outline-none ring-sky-400 transition focus:ring-2"
           placeholder="you@example.com"
         />
         {errors.email ? <p className="mt-1 text-sm text-rose-600">{errors.email.message}</p> : null}
       </div>
 
       <div>
-        <label htmlFor="password" className="mb-1 block text-sm font-medium text-slate-700">
+        <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-slate-700">
           Password
         </label>
         <input
@@ -75,7 +75,7 @@ export function LoginForm() {
           type="password"
           autoComplete="current-password"
           {...register("password")}
-          className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none ring-sky-500 transition focus:ring-2"
+          className="w-full rounded-xl border border-slate-300/80 bg-white/95 px-3.5 py-2.5 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_4px_10px_rgba(13,37,74,0.06)] outline-none ring-sky-400 transition focus:ring-2"
           placeholder="Enter your password"
         />
         {errors.password ? (
@@ -88,7 +88,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-sky-600 px-4 py-2 font-semibold text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:bg-sky-400"
+        className="btn-3d w-full rounded-xl px-4 py-2.5 font-semibold text-white transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? "Signing in..." : "Sign in"}
       </button>
