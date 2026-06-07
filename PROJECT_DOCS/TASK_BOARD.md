@@ -148,19 +148,23 @@ https://vstep-app-delta.vercel.app
 
 STUDY PLAN
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] 90 Day Planner
+[x] 90 Day Planner
 
-[ ] Daily Tasks
+[x] Daily Tasks
 
-[ ] Progress Tracking
+[x] Progress Tracking
 
 DONE WHEN:
 
 Study Plan Generated.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
