@@ -1,0 +1,68 @@
+import type { VocabularyWord } from "@/types/vocabulary";
+
+export const VOCABULARY_WORD_BANK: VocabularyWord[] = [
+  {
+    id: "word-1",
+    word: "sustainable",
+    ipa: "/səˈsteɪ.nə.bəl/",
+    meaning: "able to continue over a long period without harming resources",
+    example: "The city needs a sustainable transport system.",
+    topic: "Environment",
+  },
+  {
+    id: "word-2",
+    word: "allocate",
+    ipa: "/ˈæl.ə.keɪt/",
+    meaning: "to distribute resources for a particular purpose",
+    example: "Schools should allocate more time to speaking practice.",
+    topic: "Education",
+  },
+  {
+    id: "word-3",
+    word: "enhance",
+    ipa: "/ɪnˈhɑːns/",
+    meaning: "to improve the quality or value of something",
+    example: "Regular feedback can enhance writing quality.",
+    topic: "Learning",
+  },
+  {
+    id: "word-4",
+    word: "inevitable",
+    ipa: "/ɪnˈev.ɪ.tə.bəl/",
+    meaning: "certain to happen and impossible to avoid",
+    example: "Some stress before exams is inevitable.",
+    topic: "Psychology",
+  },
+  {
+    id: "word-5",
+    word: "collaborate",
+    ipa: "/kəˈlæb.ə.reɪt/",
+    meaning: "to work together with others to achieve a goal",
+    example: "Students collaborate on group projects online.",
+    topic: "Work",
+  },
+  {
+    id: "word-6",
+    word: "consequence",
+    ipa: "/ˈkɒn.sɪ.kwəns/",
+    meaning: "a result of an action or situation",
+    example: "Lack of sleep can have serious consequences.",
+    topic: "Health",
+  },
+  {
+    id: "word-7",
+    word: "justify",
+    ipa: "/ˈdʒʌs.tɪ.faɪ/",
+    meaning: "to give valid reasons for something",
+    example: "You need evidence to justify your opinion.",
+    topic: "Academic",
+  },
+  {
+    id: "word-8",
+    word: "approach",
+    ipa: "/əˈprəʊtʃ/",
+    meaning: "a method of dealing with a problem",
+    example: "A practical approach helps students learn faster.",
+    topic: "Strategy",
+  },
+];

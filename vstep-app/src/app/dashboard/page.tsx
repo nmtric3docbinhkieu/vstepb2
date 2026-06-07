@@ -32,6 +32,12 @@ export default async function DashboardPage() {
         </div>
         <div className="flex items-center gap-2">
           <Link
+            href="/vocabulary"
+            className="btn-ghost-3d rounded-xl px-4 py-2 text-sm font-semibold text-slate-700"
+          >
+            Vocabulary
+          </Link>
+          <Link
             href="/speaking"
             className="btn-ghost-3d rounded-xl px-4 py-2 text-sm font-semibold text-slate-700"
           >

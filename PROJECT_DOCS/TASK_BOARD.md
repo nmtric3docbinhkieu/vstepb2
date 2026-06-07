@@ -272,19 +272,23 @@ https://vstep-app-delta.vercel.app
 
 VOCABULARY
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Flashcards
+[x] Flashcards
 
-[ ] Review Scheduler
+[x] Review Scheduler
 
-[ ] Mastery Tracking
+[x] Mastery Tracking
 
 DONE WHEN:
 
 Spaced Repetition works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
