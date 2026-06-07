@@ -320,19 +320,23 @@ https://vstep-app-delta.vercel.app
 
 LISTENING
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Audio Player
+[x] Audio Player
 
-[ ] Questions
+[x] Questions
 
-[ ] Scoring
+[x] Scoring
 
 DONE WHEN:
 
 Listening Module works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
