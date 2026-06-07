@@ -246,21 +246,25 @@ https://vstep-app-delta.vercel.app
 
 SPEAKING EVALUATOR
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Fluency Score
+[x] Fluency Score
 
-[ ] Grammar Score
+[x] Grammar Score
 
-[ ] Pronunciation Score
+[x] Pronunciation Score
 
-[ ] Vocabulary Score
+[x] Vocabulary Score
 
 DONE WHEN:
 
 Speaking Report Generated.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 

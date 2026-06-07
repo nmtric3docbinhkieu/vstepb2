@@ -24,6 +24,8 @@ export function addSpeakingRecording(params: {
     durationSeconds: params.durationSeconds,
     transcript: null,
     transcriptProvider: null,
+    evaluation: null,
+    evaluationProvider: null,
     submittedAt: new Date().toISOString(),
   };
 
@@ -59,6 +61,38 @@ export function updateSpeakingRecordingTranscript(params: {
       ...item,
       transcript: params.transcript,
       transcriptProvider: params.transcriptProvider,
+    };
+
+    return updatedItem;
+  });
+
+  if (!updatedItem) {
+    return null;
+  }
+
+  recordingStore.set(params.userId, updatedHistory);
+  return updatedItem;
+}
+
+export function updateSpeakingRecordingEvaluation(params: {
+  userId: string;
+  recordingId: string;
+  evaluation: SpeakingRecordingItem["evaluation"];
+  evaluationProvider: "ai" | "fallback";
+}): SpeakingRecordingItem | null {
+  const history = listSpeakingRecordings(params.userId);
+
+  let updatedItem: SpeakingRecordingItem | null = null;
+
+  const updatedHistory = history.map((item) => {
+    if (item.id !== params.recordingId) {
+      return item;
+    }
+
+    updatedItem = {
+      ...item,
+      evaluation: params.evaluation,
+      evaluationProvider: params.evaluationProvider,
     };
 
     return updatedItem;

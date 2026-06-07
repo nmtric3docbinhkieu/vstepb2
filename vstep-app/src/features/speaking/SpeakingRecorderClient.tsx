@@ -56,6 +56,7 @@ export function SpeakingRecorderClient() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [recordings, setRecordings] = useState<SpeakingRecordingItem[]>([]);
   const [transcribingId, setTranscribingId] = useState<string | null>(null);
+  const [evaluatingId, setEvaluatingId] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -213,6 +214,36 @@ export function SpeakingRecorderClient() {
     }
   };
 
+  const evaluateRecording = async (recordingId: string) => {
+    setErrorMessage(null);
+    setEvaluatingId(recordingId);
+
+    try {
+      const response = await fetch("/api/speaking/evaluate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ recordingId }),
+      });
+
+      const result = (await response.json()) as SpeakingApiResponse;
+
+      if (!response.ok || !result.success || !result.data?.recording) {
+        setErrorMessage(result.message || "Evaluation failed.");
+        return;
+      }
+
+      setRecordings((prev) =>
+        prev.map((item) => (item.id === recordingId ? result.data!.recording! : item)),
+      );
+    } catch {
+      setErrorMessage("Evaluation failed.");
+    } finally {
+      setEvaluatingId(null);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <section className="surface-3d rounded-2xl p-6">
@@ -287,12 +318,71 @@ export function SpeakingRecorderClient() {
                     {item.transcriptProvider ? (
                       <span className="text-xs text-slate-500">Source: {item.transcriptProvider}</span>
                     ) : null}
+
+                    <button
+                      type="button"
+                      onClick={() => void evaluateRecording(item.id)}
+                      disabled={evaluatingId === item.id || !item.transcript}
+                      className="btn-ghost-3d rounded-xl px-3 py-1.5 text-xs font-semibold text-slate-700 disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {evaluatingId === item.id ? "Evaluating..." : "Evaluate Speaking"}
+                    </button>
+
+                    {item.evaluationProvider ? (
+                      <span className="text-xs text-slate-500">Eval: {item.evaluationProvider}</span>
+                    ) : null}
                   </div>
 
                   {item.transcript ? (
                     <div className="mt-3 rounded-lg border border-slate-200 bg-white px-3 py-2">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Transcript</p>
                       <p className="mt-1 whitespace-pre-wrap text-sm text-slate-700">{item.transcript}</p>
+                    </div>
+                  ) : null}
+
+                  {item.evaluation ? (
+                    <div className="mt-3 rounded-lg border border-slate-200 bg-white px-3 py-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                        Speaking Evaluation
+                      </p>
+
+                      <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                        <p className="text-sm text-slate-700">
+                          Fluency: <span className="font-semibold text-slate-900">{item.evaluation.fluencyScore}</span>
+                        </p>
+                        <p className="text-sm text-slate-700">
+                          Grammar: <span className="font-semibold text-slate-900">{item.evaluation.grammarScore}</span>
+                        </p>
+                        <p className="text-sm text-slate-700">
+                          Pronunciation: <span className="font-semibold text-slate-900">{item.evaluation.pronunciationScore}</span>
+                        </p>
+                        <p className="text-sm text-slate-700">
+                          Vocabulary: <span className="font-semibold text-slate-900">{item.evaluation.vocabularyScore}</span>
+                        </p>
+                      </div>
+
+                      <p className="mt-2 text-sm text-slate-800">
+                        Overall: <span className="font-semibold">{item.evaluation.overallScore}</span>
+                      </p>
+
+                      <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <p className="text-xs font-semibold text-slate-600">Strengths</p>
+                          <ul className="mt-1 list-disc pl-4 text-xs text-slate-700">
+                            {item.evaluation.strengths.map((point) => (
+                              <li key={point}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold text-slate-600">Weaknesses</p>
+                          <ul className="mt-1 list-disc pl-4 text-xs text-slate-700">
+                            {item.evaluation.weaknesses.map((point) => (
+                              <li key={point}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   ) : null}
                 </article>
