@@ -44,21 +44,25 @@ https://vstep-app-delta.vercel.app
 
 AUTH
 
-Status: NOT STARTED
+Status: IN PROGRESS
 
 Tasks:
 
-[ ] Login Page
+[x] Login Page
 
-[ ] Session Management
+[x] Session Management
 
-[ ] Protected Routes
+[x] Protected Routes
 
-[ ] Logout
+[x] Logout
 
 DONE WHEN:
 
 Login works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
