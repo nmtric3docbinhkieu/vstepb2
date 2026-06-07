@@ -55,6 +55,7 @@ export function SpeakingRecorderClient() {
   const [durationSeconds, setDurationSeconds] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [recordings, setRecordings] = useState<SpeakingRecordingItem[]>([]);
+  const [transcribingId, setTranscribingId] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -182,6 +183,36 @@ export function SpeakingRecorderClient() {
     }
   };
 
+  const transcribeRecording = async (recordingId: string) => {
+    setErrorMessage(null);
+    setTranscribingId(recordingId);
+
+    try {
+      const response = await fetch("/api/speaking/transcribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ recordingId }),
+      });
+
+      const result = (await response.json()) as SpeakingApiResponse;
+
+      if (!response.ok || !result.success || !result.data?.recording) {
+        setErrorMessage(result.message || "Transcription failed.");
+        return;
+      }
+
+      setRecordings((prev) =>
+        prev.map((item) => (item.id === recordingId ? result.data!.recording! : item)),
+      );
+    } catch {
+      setErrorMessage("Transcription failed.");
+    } finally {
+      setTranscribingId(null);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <section className="surface-3d rounded-2xl p-6">
@@ -242,6 +273,28 @@ export function SpeakingRecorderClient() {
                     Duration: {formatDuration(item.durationSeconds)} | {new Date(item.submittedAt).toLocaleString()}
                   </p>
                   <audio controls className="mt-3 w-full" src={audioSrc} />
+
+                  <div className="mt-3 flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => void transcribeRecording(item.id)}
+                      disabled={transcribingId === item.id}
+                      className="btn-ghost-3d rounded-xl px-3 py-1.5 text-xs font-semibold text-slate-700 disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {transcribingId === item.id ? "Transcribing..." : "Generate Transcript"}
+                    </button>
+
+                    {item.transcriptProvider ? (
+                      <span className="text-xs text-slate-500">Source: {item.transcriptProvider}</span>
+                    ) : null}
+                  </div>
+
+                  {item.transcript ? (
+                    <div className="mt-3 rounded-lg border border-slate-200 bg-white px-3 py-2">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Transcript</p>
+                      <p className="mt-1 whitespace-pre-wrap text-sm text-slate-700">{item.transcript}</p>
+                    </div>
+                  ) : null}
                 </article>
               );
             })}

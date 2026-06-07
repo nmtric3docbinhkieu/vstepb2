@@ -28,6 +28,7 @@ AUTH_USER_PASSWORD=replace_with_secure_password
 AUTH_USER_FULL_NAME=VSTEP Student
 OPENAI_API_KEY=replace_with_openai_api_key
 OPENAI_MODEL=gpt-4o-mini
+OPENAI_WHISPER_MODEL=whisper-1
 ```
 
 ## Local Setup

@@ -222,19 +222,23 @@ https://vstep-app-delta.vercel.app
 
 WHISPER
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] OpenAI Whisper
+[x] OpenAI Whisper
 
-[ ] Transcript
+[x] Transcript
 
-[ ] Store Transcript
+[x] Store Transcript
 
 DONE WHEN:
 
 Speech To Text works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 

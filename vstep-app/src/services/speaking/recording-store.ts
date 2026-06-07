@@ -22,10 +22,52 @@ export function addSpeakingRecording(params: {
     audioBase64: params.audioBase64,
     mimeType: params.mimeType,
     durationSeconds: params.durationSeconds,
+    transcript: null,
+    transcriptProvider: null,
     submittedAt: new Date().toISOString(),
   };
 
   recordingStore.set(params.userId, [nextItem, ...history].slice(0, MAX_RECORDINGS));
 
   return nextItem;
+}
+
+export function findSpeakingRecordingById(
+  userId: string,
+  recordingId: string,
+): SpeakingRecordingItem | null {
+  const history = listSpeakingRecordings(userId);
+  return history.find((item) => item.id === recordingId) ?? null;
+}
+
+export function updateSpeakingRecordingTranscript(params: {
+  userId: string;
+  recordingId: string;
+  transcript: string;
+  transcriptProvider: "whisper" | "fallback";
+}): SpeakingRecordingItem | null {
+  const history = listSpeakingRecordings(params.userId);
+
+  let updatedItem: SpeakingRecordingItem | null = null;
+
+  const updatedHistory = history.map((item) => {
+    if (item.id !== params.recordingId) {
+      return item;
+    }
+
+    updatedItem = {
+      ...item,
+      transcript: params.transcript,
+      transcriptProvider: params.transcriptProvider,
+    };
+
+    return updatedItem;
+  });
+
+  if (!updatedItem) {
+    return null;
+  }
+
+  recordingStore.set(params.userId, updatedHistory);
+  return updatedItem;
 }
