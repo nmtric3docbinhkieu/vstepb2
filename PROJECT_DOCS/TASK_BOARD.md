@@ -172,21 +172,25 @@ https://vstep-app-delta.vercel.app
 
 WRITING TRAINER
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Essay Input
+[x] Essay Input
 
-[ ] AI Evaluation
+[x] AI Evaluation
 
-[ ] Feedback UI
+[x] Feedback UI
 
-[ ] Sample Essay
+[x] Sample Essay
 
 DONE WHEN:
 
 Writing scored.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
