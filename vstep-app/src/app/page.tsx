@@ -89,6 +89,12 @@ export default function Home() {
           >
             Open Listening Trainer
           </Link>
+          <Link
+            href="/mock-test"
+            className="btn-ghost-3d rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-700 transition-transform hover:-translate-y-0.5"
+          >
+            Open Mock Test
+          </Link>
         </div>
       </main>
     </div>

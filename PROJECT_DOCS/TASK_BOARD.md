@@ -344,16 +344,20 @@ https://vstep-app-delta.vercel.app
 
 MOCK TEST
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Full Simulation
+[x] Full Simulation
 
-[ ] Scoring
+[x] Scoring
 
-[ ] Final Report
+[x] Final Report
 
 DONE WHEN:
 
 Complete VSTEP Mock Test available.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
