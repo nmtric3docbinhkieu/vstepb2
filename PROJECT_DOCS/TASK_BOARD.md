@@ -44,7 +44,7 @@ https://vstep-app-delta.vercel.app
 
 AUTH
 
-Status: IN PROGRESS
+Status: COMPLETED
 
 Tasks:
 
@@ -70,21 +70,25 @@ https://vstep-app-delta.vercel.app
 
 DASHBOARD
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Dashboard UI
+[x] Dashboard UI
 
-[ ] Statistics Cards
+[x] Statistics Cards
 
-[ ] Learning Progress
+[x] Learning Progress
 
-[ ] Today's Tasks
+[x] Today's Tasks
 
 DONE WHEN:
 
 Dashboard usable.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
