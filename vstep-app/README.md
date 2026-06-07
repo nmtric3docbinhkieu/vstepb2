@@ -26,6 +26,8 @@ AUTH_JWT_SECRET=replace_with_a_long_random_secret
 AUTH_USER_EMAIL=student@example.com
 AUTH_USER_PASSWORD=replace_with_secure_password
 AUTH_USER_FULL_NAME=VSTEP Student
+OPENAI_API_KEY=replace_with_openai_api_key
+OPENAI_MODEL=gpt-4o-mini
 ```
 
 ## Local Setup

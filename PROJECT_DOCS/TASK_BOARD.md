@@ -96,21 +96,25 @@ https://vstep-app-delta.vercel.app
 
 AI TUTOR
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Chat UI
+[x] Chat UI
 
-[ ] AI Service
+[x] AI Service
 
-[ ] Conversation History
+[x] Conversation History
 
-[ ] Prompt Templates
+[x] Prompt Templates
 
 DONE WHEN:
 
 Tutor works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 

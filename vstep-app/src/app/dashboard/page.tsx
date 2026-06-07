@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 import { AUTH_COOKIE_NAME } from "@/constants/auth";
 import { LearningProgress } from "@/features/dashboard/LearningProgress";
@@ -29,7 +30,15 @@ export default async function DashboardPage() {
           <p className="mt-1 text-sm text-slate-700">Welcome back, {payload.fullName}.</p>
           <p className="mt-1 text-xs text-slate-600">{dashboardData.predictedScore}</p>
         </div>
-        <LogoutButton />
+        <div className="flex items-center gap-2">
+          <Link
+            href="/tutor"
+            className="btn-3d rounded-xl px-4 py-2 text-sm font-semibold text-white"
+          >
+            Open AI Tutor
+          </Link>
+          <LogoutButton />
+        </div>
       </header>
 
       <StatisticsCards items={dashboardData.stats} />
