@@ -16,7 +16,8 @@ export async function middleware(request: NextRequest) {
       pathname.startsWith("/tutor") ||
       pathname.startsWith("/placement-test") ||
       pathname.startsWith("/study-plan") ||
-      pathname.startsWith("/writing")) &&
+      pathname.startsWith("/writing") ||
+      pathname.startsWith("/speaking")) &&
     !isAuthenticated
   ) {
     const url = request.nextUrl.clone();
@@ -40,6 +41,7 @@ export const config = {
     "/placement-test/:path*",
     "/study-plan/:path*",
     "/writing/:path*",
+    "/speaking/:path*",
     "/login",
   ],
 };

@@ -198,19 +198,23 @@ https://vstep-app-delta.vercel.app
 
 SPEAKING RECORDER
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Record Audio
+[x] Record Audio
 
-[ ] Upload Audio
+[x] Upload Audio
 
-[ ] Playback Audio
+[x] Playback Audio
 
 DONE WHEN:
 
 Recording works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
