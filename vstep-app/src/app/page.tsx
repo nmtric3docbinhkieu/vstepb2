@@ -47,6 +47,12 @@ export default function Home() {
           >
             Open Tutor
           </Link>
+          <Link
+            href="/placement-test"
+            className="btn-ghost-3d rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-700 transition-transform hover:-translate-y-0.5"
+          >
+            Open Placement Test
+          </Link>
         </div>
       </main>
     </div>

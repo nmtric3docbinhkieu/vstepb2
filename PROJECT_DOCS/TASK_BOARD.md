@@ -122,21 +122,25 @@ https://vstep-app-delta.vercel.app
 
 PLACEMENT TEST
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Vocabulary Test
+[x] Vocabulary Test
 
-[ ] Grammar Test
+[x] Grammar Test
 
-[ ] Reading Test
+[x] Reading Test
 
-[ ] Scoring
+[x] Scoring
 
 DONE WHEN:
 
 Assessment Report Generated.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
