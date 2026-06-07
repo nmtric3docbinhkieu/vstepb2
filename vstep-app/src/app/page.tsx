@@ -77,6 +77,12 @@ export default function Home() {
           >
             Open Vocabulary Trainer
           </Link>
+          <Link
+            href="/reading"
+            className="btn-ghost-3d rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-700 transition-transform hover:-translate-y-0.5"
+          >
+            Open Reading Trainer
+          </Link>
         </div>
       </main>
     </div>

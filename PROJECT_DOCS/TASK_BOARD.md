@@ -296,19 +296,23 @@ https://vstep-app-delta.vercel.app
 
 READING
 
-Status: NOT STARTED
+Status: COMPLETED
 
 Tasks:
 
-[ ] Reading Passage
+[x] Reading Passage
 
-[ ] Questions
+[x] Questions
 
-[ ] Scoring
+[x] Scoring
 
 DONE WHEN:
 
 Reading Module works.
+
+Deployment URL:
+
+https://vstep-app-delta.vercel.app
 
 ---
 
