@@ -16,6 +16,20 @@ export type PracticeSet = {
   task: string;
 };
 
+export type TrendInsight = {
+  id: string;
+  area: "Listening" | "Reading" | "Writing" | "Speaking";
+  pattern: string;
+  action: string;
+};
+
+export type HotTopic = {
+  id: string;
+  skill: "Writing" | "Speaking";
+  title: string;
+  type: string;
+};
+
 export const RECENT_EXAM_UPDATES: RecentExamUpdate[] = [
   {
     id: "update-vlu",
@@ -115,5 +129,83 @@ export const PRACTICE_SETS: PracticeSet[] = [
     level: "B2",
     focus: "Opinion support and rebuttal",
     task: "Trinh bay quan diem va phan bien gon gang.",
+  },
+];
+
+export const TREND_INSIGHTS_MAY_JUN_2026: TrendInsight[] = [
+  {
+    id: "trend-listening-p3",
+    area: "Listening",
+    pattern: "Part 1 thuong de tho, Part 3 thuong kho nghe va de mat y.",
+    action: "Doc cau hoi truoc, ghi nhanh keyword, uu tien nam y chinh truoc chi tiet.",
+  },
+  {
+    id: "trend-reading-topic-shift",
+    area: "Reading",
+    pattern: "Chu de xoay quanh do thi, cong nghe giao duc, moi truong, doi song xa hoi.",
+    action: "Luyen paraphrase, title matching, tone question, va tu vung hoc thuat theo chu de.",
+  },
+  {
+    id: "trend-writing-common",
+    area: "Writing",
+    pattern: "Task 1 thuong la email/thu theo tinh huong thuc te; Task 2 la discuss/cause-solution.",
+    action: "Dung khung co dinh cho tung dang de va luyen viet 180-220 tu dung thoi gian.",
+  },
+  {
+    id: "trend-speaking-structure",
+    area: "Speaking",
+    pattern: "Part 2-3 hay roi vao chon lua/chia se loi ich, can cau truc ly do + giai thich + vi du.",
+    action: "Luyen template ngan gon, noi cham ro, uu tien cau don dung hon cau phuc sai.",
+  },
+];
+
+export const HOT_TOPICS_RECENT: HotTopic[] = [
+  {
+    id: "spk-community",
+    skill: "Speaking",
+    title: "Benefits of community activities",
+    type: "Part 3 - benefits/opinion",
+  },
+  {
+    id: "spk-technology-learning",
+    skill: "Speaking",
+    title: "Effects of technology on learning",
+    type: "Part 3 - discussion",
+  },
+  {
+    id: "spk-travel",
+    skill: "Speaking",
+    title: "Benefits of traveling / holiday choices",
+    type: "Part 2-3",
+  },
+  {
+    id: "spk-healthy-life",
+    skill: "Speaking",
+    title: "Outdoor activities and healthy lifestyle",
+    type: "Part 3 - advantages",
+  },
+  {
+    id: "wri-social-media",
+    skill: "Writing",
+    title: "Social media: benefits vs stress",
+    type: "Task 2 - discuss both views",
+  },
+  {
+    id: "wri-fast-food",
+    skill: "Writing",
+    title: "Teen fast-food consumption",
+    type: "Task 2 - causes and solutions",
+  },
+  {
+    id: "wri-textbook-tech",
+    skill: "Writing",
+    title: "Role of textbooks in technology era",
+    type: "Task 2 - opinion/discussion",
+  },
+  {
+    id: "wri-informal-email",
+    skill: "Writing",
+    title: "Email to friend/cousin about visiting plans",
+    type: "Task 1 - informal email",
   },
 ];

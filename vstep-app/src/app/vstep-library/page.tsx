@@ -5,7 +5,12 @@ import Link from "next/link";
 import { AUTH_COOKIE_NAME } from "@/constants/auth";
 import { LogoutButton } from "@/features/auth/LogoutButton";
 import { verifyAuthToken } from "@/lib/auth";
-import { PRACTICE_SETS, RECENT_EXAM_UPDATES } from "@/services/content/vstep-library";
+import {
+  HOT_TOPICS_RECENT,
+  PRACTICE_SETS,
+  RECENT_EXAM_UPDATES,
+  TREND_INSIGHTS_MAY_JUN_2026,
+} from "@/services/content/vstep-library";
 
 export default async function VstepLibraryPage() {
   const cookieStore = await cookies();
@@ -46,6 +51,32 @@ export default async function VstepLibraryPage() {
                 Giai doan: {item.period} | Format: {item.format}
               </p>
               <p className="mt-2 text-xs text-slate-700">Huong luyen: {item.note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="surface-3d mt-6 rounded-2xl p-6">
+        <h2 className="text-lg font-semibold text-slate-900">Tong hop xu huong de (thang 5-6/2026)</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {TREND_INSIGHTS_MAY_JUN_2026.map((item) => (
+            <article key={item.id} className="card-3d rounded-xl p-4">
+              <p className="text-xs font-semibold tracking-[0.16em] text-sky-700">{item.area}</p>
+              <p className="mt-1 text-sm text-slate-700">{item.pattern}</p>
+              <p className="mt-2 text-xs text-slate-700">Goi y on: {item.action}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="surface-3d mt-6 rounded-2xl p-6">
+        <h2 className="text-lg font-semibold text-slate-900">Topic xuat hien nhieu gan day</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {HOT_TOPICS_RECENT.map((item) => (
+            <article key={item.id} className="card-3d rounded-xl p-4">
+              <p className="text-xs font-semibold tracking-[0.16em] text-sky-700">{item.skill}</p>
+              <p className="mt-1 text-sm font-semibold text-slate-900">{item.title}</p>
+              <p className="mt-1 text-xs text-slate-600">Dang bai: {item.type}</p>
             </article>
           ))}
         </div>
