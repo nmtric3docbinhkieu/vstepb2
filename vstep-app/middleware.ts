@@ -21,7 +21,8 @@ export async function middleware(request: NextRequest) {
       pathname.startsWith("/vocabulary") ||
       pathname.startsWith("/reading") ||
       pathname.startsWith("/listening") ||
-      pathname.startsWith("/mock-test")) &&
+      pathname.startsWith("/mock-test") ||
+      pathname.startsWith("/vstep-library")) &&
     !isAuthenticated
   ) {
     const url = request.nextUrl.clone();
@@ -50,6 +51,7 @@ export const config = {
     "/reading/:path*",
     "/listening/:path*",
     "/mock-test/:path*",
+    "/vstep-library/:path*",
     "/login",
   ],
 };

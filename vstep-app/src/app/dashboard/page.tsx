@@ -26,11 +26,17 @@ export default async function DashboardPage() {
       <header className="flex items-center justify-between gap-4">
         <div>
           <p className="text-xs font-semibold tracking-[0.22em] text-sky-700">AI VSTEP PERSONAL COACH</p>
-          <h1 className="mt-2 font-mono text-4xl font-bold text-slate-900">Dashboard</h1>
-          <p className="mt-1 text-sm text-slate-700">Welcome back, {payload.fullName}.</p>
+          <h1 className="mt-2 font-mono text-4xl font-bold text-slate-900">Bang dieu khien hoc tap</h1>
+          <p className="mt-1 text-sm text-slate-700">Chao mung tro lai, {payload.fullName}.</p>
           <p className="mt-1 text-xs text-slate-600">{dashboardData.predictedScore}</p>
         </div>
         <div className="flex items-center gap-2">
+          <Link
+            href="/vstep-library"
+            className="btn-ghost-3d rounded-xl px-4 py-2 text-sm font-semibold text-slate-700"
+          >
+            Thu vien de
+          </Link>
           <Link
             href="/mock-test"
             className="btn-ghost-3d rounded-xl px-4 py-2 text-sm font-semibold text-slate-700"
@@ -83,11 +89,35 @@ export default async function DashboardPage() {
             href="/tutor"
             className="btn-3d rounded-xl px-4 py-2 text-sm font-semibold text-white"
           >
-            Open AI Tutor
+            AI Tutor
           </Link>
           <LogoutButton />
         </div>
       </header>
+
+      <section className="surface-3d mt-6 rounded-2xl p-6">
+        <h2 className="text-lg font-semibold text-slate-900">Bat dau hoc ngay</h2>
+        <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-slate-700">
+          <li>Lam Placement Test de xac dinh trinh do.</li>
+          <li>Hoc theo Study Plan va hoan thanh nhiem vu trong ngay.</li>
+          <li>Luyen Reading, Listening, Writing, Speaking moi ngay.</li>
+          <li>Lam Mock Test moi 7 ngay de do tien bo.</li>
+        </ol>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Link
+            href="/guide"
+            className="btn-3d rounded-xl px-4 py-2 text-sm font-semibold text-white"
+          >
+            Xem huong dan day du
+          </Link>
+          <Link
+            href="/study-plan"
+            className="btn-ghost-3d rounded-xl px-4 py-2 text-sm font-semibold text-slate-700"
+          >
+            Mo Study Plan
+          </Link>
+        </div>
+      </section>
 
       <StatisticsCards items={dashboardData.stats} />
       <LearningProgress items={dashboardData.progress} />

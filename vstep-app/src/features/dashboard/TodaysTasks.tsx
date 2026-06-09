@@ -10,9 +10,9 @@ export function TodaysTasks({ items }: TodaysTasksProps) {
   return (
     <section className="surface-3d mt-6 rounded-2xl p-6">
       <div className="flex items-center justify-between gap-2">
-        <h2 className="text-lg font-semibold text-slate-900">Today Tasks</h2>
+        <h2 className="text-lg font-semibold text-slate-900">Nhiem vu hom nay</h2>
         <p className="text-sm text-slate-700">
-          {completedCount}/{items.length} completed
+          {completedCount}/{items.length} hoan thanh
         </p>
       </div>
 
@@ -41,7 +41,7 @@ export function TodaysTasks({ items }: TodaysTasksProps) {
                   : "bg-sky-100 text-sky-700"
               }`}
             >
-              {item.completed ? "Done" : "Pending"}
+              {item.completed ? "Xong" : "Dang hoc"}
             </span>
           </li>
         ))}
