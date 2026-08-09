@@ -10,7 +10,11 @@ Version 1.0
 
 PROJECT FOUNDATION
 
+<<<<<<< HEAD
 Status: COMPLETED
+=======
+Status: IN PROGRESS
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)
 
 Tasks:
 

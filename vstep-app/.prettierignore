@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .next
 out
 build
@@ -6,3 +7,13 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 .husky/_
+=======
+node_modules
+.next
+out
+coverage
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+.vercel
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)

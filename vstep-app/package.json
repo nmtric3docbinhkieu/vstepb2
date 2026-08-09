@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@hookform/resolvers": "^3.10.0",
     "jose": "^5.9.6",
     "next": "16.2.7",
@@ -19,6 +20,11 @@
     "react-dom": "19.2.4",
     "react-hook-form": "^7.58.1",
     "zod": "^3.25.76"
+=======
+    "next": "^16.2.7",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -28,9 +34,23 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
     "husky": "^9.1.7",
+<<<<<<< HEAD
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
+=======
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2",
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write"
+    ]
   }
 }

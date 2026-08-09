@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+<<<<<<< HEAD
   --background: #f0f7ff;
   --foreground: #0b1f3a;
   --surface: #f8fcff;
@@ -8,11 +9,16 @@
   --border-soft: #c5d6ea;
   --accent: #0d7bdc;
   --accent-strong: #0857b1;
+=======
+  --background: #f8fafc;
+  --foreground: #0f172a;
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+<<<<<<< HEAD
   --font-sans: var(--font-plus-jakarta);
   --font-mono: var(--font-space-grotesk);
 }
@@ -23,6 +29,19 @@ body {
     radial-gradient(circle at 10% 10%, #d7ebff 0%, transparent 34%),
     radial-gradient(circle at 90% 0%, #e4fff4 0%, transparent 38%),
     linear-gradient(165deg, #f5faff 0%, #eef5ff 55%, #edf9ff 100%);
+=======
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+>>>>>>> f2ffd46 (Prepare VSTEP app for deployment)
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), sans-serif;
 }
@@ -73,4 +92,13 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #bbf7d0;
+  color: #0f172a;
 }
